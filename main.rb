@@ -34,14 +34,24 @@ idiot_book = {
   genre: "роман"
 }
 
+idiot_book_update = {
+  title: "Идиот",
+  author: "Федор Достоевский",
+  price: 10000,
+  amount: 7,
+  genre: "роман"
+}
+
 
 leon = Movie.new(leon_movie)
 fool = Movie.new(fool_movie)
 idiot = Book.new(idiot_book)
 
+idiot.update(idiot_book_update)
+
 puts leon.to_s
 puts fool.to_s
-puts idiot.to_
+puts idiot.to_s
 
 
 
