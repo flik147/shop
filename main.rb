@@ -11,13 +11,37 @@ require_relative 'lib/product'
 require_relative 'lib/movie'
 require_relative 'lib/book'
 
-params = {
+leon_movie = {
+  title: "Леон",
+  author: "Люк бессон",
   price: 990,
-  amount: 4
+  amount: 4,
+  year: 1994
 }
 
-leon = Movie.new(params)
+fool_movie = {
+  title: "«Дурак»",
+  author: "Юрий Быков",
+  price: 390,
+  amount: 1,
+  year: 2014
+}
+idiot_book = {
+  title: "Идиот",
+  author: "Федор Достоевский",
+  price: 390,
+  amount: 7,
+  genre: "роман"
+}
 
-puts "Фильм \"Леон\" стоит #{leon.price} руб.\nНа складе осталось #{leon.amount} ед."
+
+leon = Movie.new(leon_movie)
+fool = Movie.new(fool_movie)
+idiot = Book.new(idiot_book)
+
+puts leon.to_s
+puts fool.to_s
+puts idiot.to_
+
 
 
