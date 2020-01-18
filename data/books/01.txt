@@ -1,0 +1,5 @@
+Learn Ruby the Hard Way
+Книга для программистов Ruby
+Зед Шоу
+1293
+11

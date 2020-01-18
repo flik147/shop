@@ -11,14 +11,6 @@ require_relative 'lib/product'
 require_relative 'lib/movie'
 require_relative 'lib/book'
 
-leon_movie = {
-  title: "Леон",
-  author: "Люк бессон",
-  price: 990,
-  amount: 4,
-  year: 1994
-}
-
 fool_movie = {
   title: "«Дурак»",
   author: "Юрий Быков",
@@ -38,20 +30,26 @@ idiot_book_update = {
   title: "Идиот",
   author: "Федор Достоевский",
   price: 10000,
-  amount: 7,
+  amount: 4,
   genre: "роман"
 }
 
 
-leon = Movie.new(leon_movie)
+
 fool = Movie.new(fool_movie)
 idiot = Book.new(idiot_book)
+movie = Movie.create_by_file('./data/movies/01.txt')
+book = Book.create_by_file('./data/books/01.txt')
+
 
 idiot.update(idiot_book_update)
 
-puts leon.to_s
+
 puts fool.to_s
+puts book.to_s
+puts movie.to_s
 puts idiot.to_s
+
 
 
 

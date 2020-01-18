@@ -7,6 +7,10 @@ class Product
     @amount = params[:amount]
   end
 
+  def self.create_by_file(file_path)
+    raise NotImplementedError
+  end
+
   def update(params)
     @title = params[:title]
     @author = params[:author]
