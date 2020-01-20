@@ -24,11 +24,11 @@ class ProductCollection
       end
 
     end
-    puts products
+    #puts products #здесь работает
     self.new(products)
   end
 
-  def to_a
+  def to_a #здесь не работает
     @products
   end
 
