@@ -24,7 +24,7 @@ class ProductCollection
       end
 
     end
-    #puts products #здесь работает
+    puts products #здесь работает
     self.new(products)
   end
 
