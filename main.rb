@@ -10,46 +10,14 @@ end
 require_relative 'lib/product'
 require_relative 'lib/movie'
 require_relative 'lib/book'
+require_relative 'lib/product_collection'
 
-fool_movie = {
-  title: "«Дурак»",
-  author: "Юрий Быков",
-  price: 390,
-  amount: 1,
-  year: 2014
-}
-idiot_book = {
-  title: "Идиот",
-  author: "Федор Достоевский",
-  price: 390,
-  amount: 7,
-  genre: "роман"
-}
+product_collection = ProductCollection.create_from_dir(File.dirname(__FILE__) + '/data')
 
-idiot_book_update = {
-  title: "Идиот",
-  author: "Федор Достоевский",
-  price: 10000,
-  amount: 4,
-  genre: "роман"
-}
+product_collection.to_a
 
+#book = Book.create_by_file("D:/rubytut2/lesson6/shop/data/books/01.txt")
+#movie = Movie.create_by_file("D:/rubytut2/lesson6/shop/data/movies/03.txt")
 
-
-fool = Movie.new(fool_movie)
-idiot = Book.new(idiot_book)
-movie = Movie.create_by_file('./data/movies/01.txt')
-book = Book.create_by_file('./data/books/01.txt')
-
-
-idiot.update(idiot_book_update)
-
-
-puts fool.to_s
-puts book.to_s
-puts movie.to_s
-puts idiot.to_s
-
-
-
-
+#puts book.to_s
+#puts movie.to_s
