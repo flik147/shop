@@ -24,11 +24,26 @@ class ProductCollection
       end
 
     end
-    puts products #здесь работает
+
     self.new(products)
   end
 
-  def to_a #здесь не работает
+  def sort!(params)
+    case params[:by]
+    when :title
+      @products.sort_by! {|product| product.to_s}
+    when :price
+      @products.sort_by! {|product| product.price}
+    when :amount
+      @products.sort_by! {|product| product.amount}
+    end
+
+    @products.reverse! if params[:order] == :asc
+
+    self
+  end
+
+  def to_a
     @products
   end
 

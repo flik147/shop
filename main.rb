@@ -14,7 +14,25 @@ require_relative 'lib/product_collection'
 
 product_collection = ProductCollection.create_from_dir(File.dirname(__FILE__) + '/data')
 
-product_collection.to_a #здесь не работает
+puts "Выберите как отсортировать вашу коллекцию\n1. По имени\n2. По цене\n3. По остатку"
+user_input = STDIN.gets.chomp.to_i
+
+if user_input == 1
+  product_sort = {by: :title}
+elsif user_input == 2
+  product_sort = {by: :price}
+elsif user_input == 3
+  product_sort = {by: :amount}
+else
+  puts "Что-то пошло не так"
+end
+
+product_sort = {by: :amount, order: ""}
+puts product_collection.sort!(product_sort)
+
+product_collection.to_a.each do |product|
+  puts product
+end
 
 #book = Book.create_by_file("D:/rubytut2/lesson6/shop/data/books/01.txt")
 #movie = Movie.create_by_file("D:/rubytut2/lesson6/shop/data/movies/03.txt")
