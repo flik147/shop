@@ -24,6 +24,6 @@ class Book < Product
   end
 
   def to_s
-    "Книга: #{@title} автор - #{@author}, жанр: #{@genre}, цена: #{@price}P , осталось: #{@amount}"
+    "Книга: \"#{@title}\", автор: #{@author}, жанр: #{@genre}, цена: #{@price}P, осталось: #{@amount}"
   end
 end

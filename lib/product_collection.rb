@@ -2,6 +2,7 @@ class ProductCollection
   #attr_reader :products
   PRODUCT_TYPES = {
     film: {dir: 'movies', class: Movie},
+    disk: {dir: 'disks', class: Disk},
     book: {dir: 'books', class: Book}
   }
 
@@ -10,7 +11,6 @@ class ProductCollection
   end
 
   def self.create_from_dir(dir)
-    #puts "#{dir}"
     products = []
 
     PRODUCT_TYPES.each do |types, hash|
@@ -18,8 +18,6 @@ class ProductCollection
       product_class = hash[:class]
 
       Dir[dir + '/' + product_dir + '/*.txt'].each do |path|
-        #puts "#{path}"
-        #puts "#{product_class}"
         products << product_class.create_by_file(path)
       end
 
@@ -47,4 +45,7 @@ class ProductCollection
     @products
   end
 
+  def to_s
+    @products.map.with_index(1) {|item, index| "#{index}. #{item}"}.join("\n")
+  end
 end

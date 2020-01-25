@@ -24,6 +24,6 @@ class Movie < Product
   end
 
   def to_s
-    "Фильм: #{@title} режиссер - #{@author}, год выхода: #{@year}, цена: #{@price}P , осталось: #{@amount}"
+    "Фильм: \"#{@title}\", режиссер: #{@author}, год выхода: #{@year}, цена: #{@price}P, осталось: #{@amount}"
   end
 end
